@@ -1,0 +1,49 @@
+@import "./parts/reboot";
+@import "./parts/colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: $dark;
+  color: $light;
+  overflow-x: hidden;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light;
+  color: $dark;
+  transition: .4s ease;
+  text-decoration: none;
+  &.add > i {
+    margin-left: .75rem;
+  }
+  &:hover, &:focus, &.red {
+    background-color: $primary;
+    color: $light;
+  }
+  &:hover, &:focus {
+    box-shadow: 0 4px 12px rgba($primary, .7);
+  }
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: lighten($dark, 60%);
+    color: lighten($dark, 50%);
+  }
+}
